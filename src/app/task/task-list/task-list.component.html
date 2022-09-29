@@ -1,3 +1,3 @@
 <ul>
-    <app-list-item *ngFor="let task of tasks" [task]="task"></app-list-item>
+    <app-list-item *ngFor="let task of tasks" [task]="task" (removeTaskEvent)="removeTask($event)"></app-list-item>
 </ul>

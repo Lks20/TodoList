@@ -1,9 +1,9 @@
 <li>
     <div>
       <input type="checkbox" name="" id="">
-      <p>{{task.text}}</p>
+      <p>{{task.text}}{{task.id}}</p>
     </div>
     <div>
-      <button>X</button>
+      <button (click)="removeTask(task.id,$event)">🗑</button>
     </div>
 </li>

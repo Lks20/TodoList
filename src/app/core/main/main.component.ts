@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   @Output() addTaskEvent:EventEmitter<string>=new EventEmitter();
+  @Output() removeTaskEvent: EventEmitter<number> = new EventEmitter();
   @Input() tasks!: any[];
 
   constructor() { }
@@ -17,6 +18,11 @@ export class MainComponent implements OnInit {
   addTask(value: string) {
     this.addTaskEvent.emit(value);
     console.log("Llego!!",value);
+  }
+
+  removeTask(id:number){
+    this.removeTaskEvent.emit(id);
+    console.log("el id llego hasta main",id);
   }
 
 }

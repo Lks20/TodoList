@@ -1,5 +1,5 @@
 <main>
 <app-task-form (addTaskEvent)="addTask($event)"></app-task-form>
     <hr>
-<app-task-list [tasks]="tasks"></app-task-list >
+<app-task-list [tasks]="tasks" (removeTaskEvent)="removeTask($event)"></app-task-list >
 </main>

@@ -8,7 +8,13 @@ import { HAMMER_LOADER } from '@angular/platform-browser';
 })
 
 export class AppComponent {
-
+  
+  removeTask(id:number){
+    this.tasks.splice(id,1);
+    console.log("el id llego hasta component",id);
+  }//Profe, si usted ve esto, logre hacer el "pasamanos" pero no se elimina
+    
+  
   addTask(value: string) {
     this.tasks.unshift({
       "id": this.tasks.length+1,

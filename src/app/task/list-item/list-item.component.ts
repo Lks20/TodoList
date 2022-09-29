@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-list-item',
@@ -7,11 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListItemComponent implements OnInit {
 
-  @Input() task:any;
-
+  @Input() task: any;
+  @Output() removeTaskEvent: EventEmitter<number> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  removeTask(id:number, e:Event){
+    e.preventDefault();
+    this.removeTaskEvent.emit(id)
+    console.log("El id sale de list-item ",id);
+  }
 }
