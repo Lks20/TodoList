@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -6,12 +6,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
+  @Output() addTaskEvent:EventEmitter<string>=new EventEmitter();
   @Input() tasks!: any[];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addTask(value: string) {
+    this.addTaskEvent.emit(value);
+    console.log("Llego!!",value);
   }
 
 }
