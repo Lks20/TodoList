@@ -10,8 +10,11 @@ import { HAMMER_LOADER } from '@angular/platform-browser';
 export class AppComponent {
   
   removeTask(id:number){
-    this.tasks.splice(id,1);
+    console.log(this.tasks);
+    this.tasks = this.tasks.filter(task => task.id !== id )
+    console.log(this.tasks);
     console.log("el id llego hasta component",id);
+
   }//Profe, si usted ve esto, logre hacer el "pasamanos" pero no se elimina
     
   
