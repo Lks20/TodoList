@@ -1,5 +1,6 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TaskServiceService } from 'src/app/services/task-service.service';
 
 @Component({
   selector: 'app-list-item',
@@ -10,13 +11,15 @@ export class ListItemComponent implements OnInit {
 
   @Input() task: any;
   @Output() removeTaskEvent: EventEmitter<number> = new EventEmitter();
-  constructor() { }
+  constructor(public dataTask:TaskServiceService) {
+
+   }
 
   ngOnInit(): void {
   }
   removeTask(id:number, e:Event){
     e.preventDefault();
-    this.removeTaskEvent.emit(id)
-    console.log("El id sale de list-item ",id);
+    this.dataTask.removeTask(id);
+    this.removeTaskEvent.emit(id);
   }
 }

@@ -9,42 +9,42 @@ import { HAMMER_LOADER } from '@angular/platform-browser';
 
 export class AppComponent {
   
-  removeTask(id:number){
-    console.log(this.tasks);
-    this.tasks = this.tasks.filter(task => task.id !== id )
-    console.log(this.tasks);
-    console.log("el id llego hasta component",id);
+  // removeTask(id:number){
+  //   console.log(this.tasks);
+  //   this.tasks = this.tasks.filter(task => task.id !== id )
+  //   console.log(this.tasks);
+  //   console.log("el id llego hasta component",id);
 
-  }//Profe, si usted ve esto, logre hacer el "pasamanos" pero no se elimina
+  // }
     
   
-  addTask(value: string) {
-    this.tasks.unshift({
-      "id": this.tasks.length+1,
-      "text": value,
-      "completed": false
-    })
-  }
+  // addTask(value: string) {
+  //   this.tasks.unshift({
+  //     "id": this.tasks.length+1,
+  //     "text": value,
+  //     "completed": false
+  //   })
+  // }
 
-  title = 'TodoListo-Modularizada';
 
-  tasks: any[] = [
-    {
-      "id": 123,
-      "text": "Hola",
-      "completed": true
-    },
-    {
-      "id": 124,
-      "text": "Hola2",
-      "completed": true
-    },
-    {
-      "id": 125,
-      "text": "Hola3",
-      "completed": true
-    }
 
-  ]
+  // tasks: any[] = [
+  //   {
+  //     "id": 123,
+  //     "text": "Hola",
+  //     "completed": true
+  //   },
+  //   {
+  //     "id": 124,
+  //     "text": "Hola2",
+  //     "completed": true
+  //   },
+  //   {
+  //     "id": 125,
+  //     "text": "Hola3",
+  //     "completed": true
+  //   }
+
+  // ]
 }
 

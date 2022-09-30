@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TaskServiceService } from 'src/app/services/task-service.service';
 
 @Component({
   selector: 'app-task-list',
@@ -7,16 +8,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
   @Output() removeTaskEvent: EventEmitter<number> = new EventEmitter();
-  @Input() tasks!: any[];  
+  tasks!: any[];  
 
-  constructor() { }
+
+
+  constructor(public dataTasks:TaskServiceService) { }
 
   ngOnInit(): void {
+    this.tasks=this.dataTasks.getTasks();
   }
 
-  removeTask(id:number){
-    this.removeTaskEvent.emit(id);
-    console.log("el id llego hasta Task-list",id);
-  }
+   removeTask(id:number){
+    this.tasks=this.dataTasks.getTasks();
+   }
 
 }
