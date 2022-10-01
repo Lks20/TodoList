@@ -22,9 +22,19 @@ export class TaskServiceService {
     })
   }
 
+  checkTask(taskDone:any){
+    if(taskDone.completed){
+      taskDone.completed=false;
+    }else{
+      taskDone.completed=true;
+    } 
+}
+
   getTasks():any[]{
     return this.tasks; 
   }
+
+
 
   tasks: any[] = [
     {

@@ -22,4 +22,7 @@ export class ListItemComponent implements OnInit {
     this.dataTask.removeTask(id);
     this.removeTaskEvent.emit(id);
   }
+  checkTask(task:any){
+    this.dataTask.checkTask(task);
+  }
 }
